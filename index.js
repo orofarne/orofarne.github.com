@@ -26,39 +26,57 @@ var drawOverpass = function(map, req, options) {
 var button = new L.sm.Button('!');
 button.addTo(map);
 button.on('click', function () {
+	map.eachLayer(function (layer) {
+		if (layer instanceof L.FeatureGroup) {
+			map.removeLayer(layer);
+		}
+	});
+
 	var req0 = '[out:xml][timeout:25]; ( way["building"]["height"]["building:levels"!~"."]({bbox}); relation["building"]["height"]["building:levels"!~"."]({bbox}); ); out body; >; out skel qt;';
-	var opts0 = {style: {
-		"color": "#0000CC",
-		"weight": 2,
-		"fill-opacity": 0.6,
-		"opacity": 1,
-	}};
+	var opts0 = {
+		style: {
+			"color": "#0000CC",
+			"weight": 2,
+			"fill-opacity": 0.6,
+			"opacity": 1,
+		},
+		popupTemplate: "{?tags.addr:street}<br/>{?tags.addr:housenumber}<br/>Height: {tags.height}"
+	};
 	drawOverpass(map, req0, opts0);
 
 	var req1 = '[out:xml][timeout:25]; ( way["building"]["building:levels"]["height"!~"."]({bbox}); relation["building"]["building:levels"]["height"!~"."]({bbox}); ); out body; >; out skel qt;';
-	var opts1 = {style: {
-		"color": "#77CC00",
-		"weight": 2,
-		"fill-opacity": 0.6,
-		"opacity": 1,
-	}};
+	var opts1 = {
+		style: {
+			"color": "#77CC00",
+			"weight": 2,
+			"fill-opacity": 0.6,
+			"opacity": 1,
+		},
+		popupTemplate: "{?tags.addr:street}<br/>{?tags.addr:housenumber}<br/>Levels: {tags.building:levels}"
+	};
 	drawOverpass(map, req1, opts1);
 
 	var req2 = '[out:xml][timeout:25]; ( way["building"]["building:levels"]["height"]({bbox}); relation["building"]["building:levels"]["height"]({bbox}); ); out body; >; out skel qt;';
-	var opts2 = {style: {
-		"color": "#00CC00",
-		"weight": 2,
-		"fill-opacity": 0.6,
-		"opacity": 1,
-	}};
+	var opts2 = {
+		style: {
+			"color": "#00CC00",
+			"weight": 2,
+			"fill-opacity": 0.6,
+			"opacity": 1,
+		},
+		popupTemplate: "{?tags.addr:street}<br/>{?tags.addr:housenumber}<br/>Height: {tags.height}, levels: {tags.building:levels}"
+	};
 	drawOverpass(map, req2, opts2);
 
 	var req3 = '[out:xml][timeout:25]; ( way["building"]["building:levels"!~"."]["height"!~"."]({bbox}); relation["building"]["building:levels"!~"."]["height"!~"."]({bbox}); ); out body; >; out skel qt;';
-	var opts3 = {style: {
-		"color": "#CC0000",
-		"weight": 2,
-		"fill-opacity": 0.6,
-		"opacity": 1,
-	}};
+	var opts3 = {
+		style: {
+			"color": "#CC0000",
+			"weight": 2,
+			"fill-opacity": 0.6,
+			"opacity": 1,
+		},
+		popupTemplate: "{?tags.addr:street}<br/>{?tags.addr:housenumber}"
+	};
 	drawOverpass(map, req3, opts3);
 });
