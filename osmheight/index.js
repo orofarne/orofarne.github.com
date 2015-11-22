@@ -1,6 +1,6 @@
 L.sm.apiKey = 'demo@gisconf';
 var map = L.sm.map('map1');
-map.setView([55.79694192712681,37.53780484199524], 16);
+map.setView([55.702935467932335,37.53076672554016], 16);
 
 var hash = new L.Hash(map);
 
