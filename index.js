@@ -80,3 +80,6 @@ button.on('click', function () {
 	};
 	drawOverpass(map, req3, opts3);
 });
+
+var search = new L.Control.Search();
+search.addTo(map);
