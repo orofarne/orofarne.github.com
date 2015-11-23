@@ -32,7 +32,7 @@ button.on('click', function () {
 		}
 	});
 
-	var req0 = '[out:xml][timeout:25]; ( way["building"]["height"]["building:levels"!~"."]({bbox}); relation["building"]["height"]["building:levels"!~"."]({bbox}); ); out body; >; out skel qt;';
+	var req0 = '[out:xml][timeout:25]; ( way["building"]["building"!="no"]["height"]["building:levels"!~"."]({bbox}); relation["building"]["height"]["building:levels"!~"."]({bbox}); ); out body; >; out skel qt;';
 	var opts0 = {
 		style: {
 			"color": "#0000CC",
@@ -44,7 +44,7 @@ button.on('click', function () {
 	};
 	drawOverpass(map, req0, opts0);
 
-	var req1 = '[out:xml][timeout:25]; ( way["building"]["building:levels"]["height"!~"."]({bbox}); relation["building"]["building:levels"]["height"!~"."]({bbox}); ); out body; >; out skel qt;';
+	var req1 = '[out:xml][timeout:25]; ( way["building"]["building"!="no"]["building:levels"]["height"!~"."]({bbox}); relation["building"]["building:levels"]["height"!~"."]({bbox}); ); out body; >; out skel qt;';
 	var opts1 = {
 		style: {
 			"color": "#77CC00",
@@ -56,7 +56,7 @@ button.on('click', function () {
 	};
 	drawOverpass(map, req1, opts1);
 
-	var req2 = '[out:xml][timeout:25]; ( way["building"]["building:levels"]["height"]({bbox}); relation["building"]["building:levels"]["height"]({bbox}); ); out body; >; out skel qt;';
+	var req2 = '[out:xml][timeout:25]; ( way["building"]["building"!="no"]["building:levels"]["height"]({bbox}); relation["building"]["building:levels"]["height"]({bbox}); ); out body; >; out skel qt;';
 	var opts2 = {
 		style: {
 			"color": "#00CC00",
@@ -68,7 +68,7 @@ button.on('click', function () {
 	};
 	drawOverpass(map, req2, opts2);
 
-	var req3 = '[out:xml][timeout:25]; ( way["building"]["building:levels"!~"."]["height"!~"."]({bbox}); relation["building"]["building:levels"!~"."]["height"!~"."]({bbox}); ); out body; >; out skel qt;';
+	var req3 = '[out:xml][timeout:25]; ( way["building"]["building"!="no"]["building:levels"!~"."]["height"!~"."]({bbox}); relation["building"]["building:levels"!~"."]["height"!~"."]({bbox}); ); out body; >; out skel qt;';
 	var opts3 = {
 		style: {
 			"color": "#CC0000",
