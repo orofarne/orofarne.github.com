@@ -20,13 +20,27 @@ var clusterToIcon = function(cluser) {
 var map = L.sm.map('map', {zoomControl: false});
 (new L.Control.Zoom({position: 'bottomright'})).addTo(map);
 
+var sidebar = L.control.sidebar('sidebar', {
+	closeButton: true,
+	position: 'right'
+});
+map.addControl(sidebar)
+
 var cluster = L.sm.cluster({
 	maxClusterRadius: 125,
 	iconCreateFunction: clusterToIcon
 });
 
+var onEachGeoJSONFeature = function(feature, layer) {
+	layer.on('click', function(e) {
+		sidebar.setContent('<h2>' + feature.properties.date + '</h2>');
+		sidebar.show();
+	});
+}
+
 L.sm.geoJson(_data, {
-	pointToLayer: pointToLayer
+	pointToLayer: pointToLayer,
+	onEachFeature: onEachGeoJSONFeature
 }).addTo(cluster);
 
 cluster.addTo(map);
