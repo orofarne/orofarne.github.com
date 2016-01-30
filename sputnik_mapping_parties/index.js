@@ -17,7 +17,8 @@ var clusterToIcon = function(cluser) {
 	});
 };
 
-var map = L.sm.map('map');
+var map = L.sm.map('map', {zoomControl: false});
+(new L.Control.Zoom({position: 'bottomright'})).addTo(map);
 
 var cluster = L.sm.cluster({
 	maxClusterRadius: 125,
