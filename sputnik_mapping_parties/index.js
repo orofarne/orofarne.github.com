@@ -31,11 +31,15 @@ var cluster = L.sm.cluster({
 	iconCreateFunction: clusterToIcon
 });
 
+var showSidebar = function(feature) {
+	sidebar.setContent(L.Util.template('<h2>{date} - {title}</h2>{description}', feature.properties));
+	sidebar.show();
+	window.location.hash = L.Util.template('{date} - {title}', feature.properties);
+};
+
 var onEachGeoJSONFeature = function(feature, layer) {
 	layer.on('click', function(e) {
-		sidebar.setContent(L.Util.template('<h2>{date} - {title}</h2>{description}', feature.properties));
-		sidebar.show();
-		window.location.hash = L.Util.template('{date} - {title}', feature.properties);
+		showSidebar(feature);
 	});
 }
 
@@ -63,6 +67,7 @@ if (window.location.hash !== '') {
 if (zoomToFeature) {
 	if (zoomToFeature.geometry.type.toLowerCase() === 'point') {
 		map.setView(zoomToFeature.geometry.coordinates.reverse(), 14);
+		showSidebar(zoomToFeature);
 	}
 } else {
 	map.fitBounds(cluster.getBounds());
