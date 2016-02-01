@@ -33,7 +33,7 @@ var cluster = L.sm.cluster({
 
 var onEachGeoJSONFeature = function(feature, layer) {
 	layer.on('click', function(e) {
-		sidebar.setContent('<h2>' + feature.properties.date + '</h2>');
+		sidebar.setContent(L.Util.template('<h2>{date} - {title}</h2>{description}', feature.properties));
 		sidebar.show();
 	});
 }
