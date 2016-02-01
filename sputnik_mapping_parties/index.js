@@ -35,8 +35,13 @@ var onEachGeoJSONFeature = function(feature, layer) {
 	layer.on('click', function(e) {
 		sidebar.setContent(L.Util.template('<h2>{date} - {title}</h2>{description}', feature.properties));
 		sidebar.show();
+		window.location.hash = L.Util.template('{date} - {title}', feature.properties);
 	});
 }
+
+sidebar.on('hidden', function() {
+	window.location.hash = '';
+});
 
 L.sm.geoJson(_data, {
 	pointToLayer: pointToLayer,
@@ -44,4 +49,21 @@ L.sm.geoJson(_data, {
 }).addTo(cluster);
 
 cluster.addTo(map);
-map.fitBounds(cluster.getBounds());
+
+var zoomToFeature = null;
+
+if (window.location.hash !== '') {
+	var anchor = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+	var date = anchor.split(' - ')[0];
+	zoomToFeature = _data.features.find(function(feature) {
+		return feature.properties.date === date;
+	});
+}
+
+if (zoomToFeature) {
+	if (zoomToFeature.geometry.type.toLowerCase() === 'point') {
+		map.setView(zoomToFeature.geometry.coordinates.reverse(), 14);
+	}
+} else {
+	map.fitBounds(cluster.getBounds());
+}
