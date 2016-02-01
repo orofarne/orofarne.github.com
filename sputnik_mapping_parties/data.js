@@ -5,7 +5,7 @@ var _data = {
       "type": "Feature",
       "properties": {
         "date": "28 ноября 2015",
-        "title": "-",
+        "title": "Московский зоопарк",
         "description": "-"
       },
       "geometry": {
@@ -20,7 +20,7 @@ var _data = {
       "type": "Feature",
       "properties": {
         "date": "26 декабря 2015",
-        "title": "-",
+        "title": "Патриаршие пруды",
         "description": "-"
       },
       "geometry": {
@@ -51,7 +51,7 @@ var _data = {
       "properties": {
         "date": "8 июня 2015",
         "description": "-",
-        "title": "-"
+        "title": "Северные Дубки"
       },
       "geometry": {
         "type": "Point",
@@ -80,7 +80,7 @@ var _data = {
       "type": "Feature",
       "properties": {
         "date": "26 сентября 2015",
-        "title": "-",
+        "title": "ВДНХ",
         "description": "-"
       },
       "geometry": {
@@ -96,7 +96,7 @@ var _data = {
       "properties": {
         "date": "24 октября 2015",
         "description": "-",
-        "title": "-"
+        "title": "Красная Пресня"
       },
       "geometry": {
         "type": "Point",
@@ -110,7 +110,7 @@ var _data = {
       "type": "Feature",
       "properties": {
         "date": "25 июля 2015",
-        "title": "-",
+        "title": "Сокольники",
         "description": "-"
       },
       "geometry": {
