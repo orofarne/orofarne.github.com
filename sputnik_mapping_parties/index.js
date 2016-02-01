@@ -34,7 +34,7 @@ var cluster = L.sm.cluster({
 var showSidebar = function(feature) {
 	sidebar.setContent(L.Util.template('<h2>{date} - {title}</h2>{description}', feature.properties));
 	sidebar.show();
-	window.location.hash = L.Util.template('{date} - {title}', feature.properties);
+	window.location.hash = L.Util.template('{date} - {title}', feature.properties).replace(/ /g, '_');
 };
 
 var onEachGeoJSONFeature = function(feature, layer) {
@@ -57,7 +57,7 @@ cluster.addTo(map);
 var zoomToFeature = null;
 
 if (window.location.hash !== '') {
-	var anchor = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+	var anchor = decodeURIComponent(window.location.hash.replace(/^#/, '')).replace(/_/g, ' ');
 	var date = anchor.split(' - ')[0];
 	zoomToFeature = _data.features.find(function(feature) {
 		return feature.properties.date === date;
