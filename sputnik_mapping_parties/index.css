@@ -68,8 +68,9 @@ html, body {
 	padding: 0px 8px 3px 8px;
 }
 
-span.sputnik-title {
+a.sputnik-title {
 	color: #105CA4;
+	text-decoration: none;
 }
 
 #sidebar {
