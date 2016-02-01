@@ -4,7 +4,9 @@ var _data = {
     {
       "type": "Feature",
       "properties": {
-        "date": "28 ноября 2015"
+        "date": "28 ноября 2015",
+        "title": "-",
+        "description": "-"
       },
       "geometry": {
         "type": "Point",
@@ -17,20 +19,24 @@ var _data = {
     {
       "type": "Feature",
       "properties": {
-        "date": "26 декабря 2015"
+        "date": "26 декабря 2015",
+        "title": "-",
+        "description": "-"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.595343589782715,
-          55.76286106805894
+          37.59220004081726,
+          55.76383892845775
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "date": "24 января 2016"
+        "date": "24 января 2016",
+        "title": "Краснодар",
+        "description": "-"
       },
       "geometry": {
         "type": "Point",
@@ -43,7 +49,9 @@ var _data = {
     {
       "type": "Feature",
       "properties": {
-        "date": "8 июня 2015"
+        "date": "8 июня 2015",
+        "description": "-",
+        "title": "-"
       },
       "geometry": {
         "type": "Point",
@@ -56,7 +64,9 @@ var _data = {
     {
       "type": "Feature",
       "properties": {
-        "date": "19 июня 2015"
+        "date": "19 июня 2015",
+        "title": "Лианозовский парк",
+        "description": "Во время картовстречи, которую команда портала провела в Лианозовском парке, мы нашли и нанесли на карты «Спутника» сотни новых объектов. Теперь на карте видно, как от 5D-кинотеатра пройти, например, к батутам, а оттуда – к площадке, где танцуют вальс.<br /><a href=\"http://corpimg.sputnik.ru/?key=220680e5af484425966e6b9668ad93ee\" target=\"_blank\"><img src=\"http://corpimg.sputnik.ru/?key=220680e5af484425966e6b9668ad93ee\" style=\"width:100%;\"/></a>"
       },
       "geometry": {
         "type": "Point",
@@ -69,7 +79,9 @@ var _data = {
     {
       "type": "Feature",
       "properties": {
-        "date": "26 сентября 2015"
+        "date": "26 сентября 2015",
+        "title": "-",
+        "description": "-"
       },
       "geometry": {
         "type": "Point",
@@ -82,7 +94,9 @@ var _data = {
     {
       "type": "Feature",
       "properties": {
-        "date": "24 октября 2015"
+        "date": "24 октября 2015",
+        "description": "-",
+        "title": "-"
       },
       "geometry": {
         "type": "Point",
@@ -95,7 +109,9 @@ var _data = {
     {
       "type": "Feature",
       "properties": {
-        "date": "25 июля 2015"
+        "date": "25 июля 2015",
+        "title": "-",
+        "description": "-"
       },
       "geometry": {
         "type": "Point",
