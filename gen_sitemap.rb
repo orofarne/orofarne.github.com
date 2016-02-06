@@ -31,3 +31,6 @@ mp_data['features'].each{ |feature|
 	puts "  <loc>https://orofarne.ru/sputnik_mapping_parties/##{hash}</loc>"
 	puts '</url>'
 }
+
+#
+puts '</urlset>'
