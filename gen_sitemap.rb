@@ -28,7 +28,7 @@ mp_data = JSON.parse(mp_contents)
 mp_data['features'].each{ |feature|
 	hash = (feature['properties']['date'] + ' - ' + feature['properties']['title']).gsub(/\s+/, '_')
 	puts '<url>'
-	puts "  <loc>https://orofarne.ru/sputnik_mapping_parties/##{hash}</loc>"
+	puts "  <loc>https://orofarne.ru/sputnik_mapping_parties/#!#{hash}</loc>"
 	puts '</url>'
 }
 
