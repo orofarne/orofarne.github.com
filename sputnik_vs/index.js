@@ -30,7 +30,12 @@ var rightLayers = {
 
 	'Россреестр': L.tileLayer('http://{s}.maps.rosreestr.ru/arcgis/rest/services/BaseMaps/BaseMap/MapServer/tile/{z}/{y}/{x}.png', {
 			attribution: '&copy; Россреестр'
-		})
+		}),
+	'Google Hybrid': new L.Google('HYBRID'),
+	'Google Roadmap': new L.Google('ROADMAP'),
+	'Google Satellite': new L.Google('SATELLITE'),
+	'Google Terrain': new L.Google('TERRAIN')
+
 };
 
 
