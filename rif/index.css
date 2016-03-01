@@ -1,0 +1,19 @@
+html, body {
+	height: 100%;
+}
+
+#map1 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50%;
+}
+
+#map2 {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50%;
+}
