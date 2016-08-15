@@ -1,4 +1,4 @@
-L.sm.apiKey = 'demo@gisconf';
+L.sm.apiKey = '1uTpbzRvZIx1';
 var map = L.sm.map('map1', {
 	editInOSMControlOptions: {position: 'bottomleft'},
 });
