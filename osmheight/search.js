@@ -17,7 +17,7 @@ var searchForm = function(e) {
 
   var q = $(this).find('[name=q]').val();
   var center = map.getCenter();
-  var searchUrl = 'http://search.maps.sputnik.ru/search'
+  var searchUrl = '//maps-search.apissputnik.ru/search'
     + '?q=' + encodeURIComponent(q)
     + '?vlat=' + center.lat
     + '?vlon=' + center.lon
