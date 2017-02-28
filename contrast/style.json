@@ -10,7 +10,7 @@
 		"sputnik-mvt": {
 			"type": "vector",
 			"tiles": [
-				"http://mvt.tilessputnik.ru/mvt/{z}/{x}/{y}.mvt"
+				"https://mvt.tilessputnik.ru/mvt/{z}/{x}/{y}.mvt"
 			],
 			"minzoom": 1,
 			"maxzoom": 16
