@@ -175,6 +175,21 @@ type stringStruct struct {
 
 # ООП
 
+```go
+type Rectangle struct {
+	Name          string
+	Width, Height float64
+}
+
+func (r Rectangle) Area() float64 {
+	return r.Width * r.Height
+}
+```
+
+---
+
+# ООП
+
 - Области видимости
 - Встраивание
 - Утиная типизация
