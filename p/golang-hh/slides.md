@@ -171,6 +171,13 @@ type stringStruct struct {
 
 <center>.resize[![DuckTyping](img/pig.jpeg)]</center>
 
+---
+
+# ООП
+
+- Области видимости
+- Встраивание
+- Утиная типизация
 
 ---
 
