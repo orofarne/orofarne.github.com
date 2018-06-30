@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>INDEX SCHOOL: day 1</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .slide-img img {
+        max-width: 85%;
+        max-height: 25em;
+      }
+
+      .slide-img-wide img {
+        max-width: 100%;
+        max-height: 25em;
+      }
+
+      .slide-img-big img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-height: 100%;
+      }
+
+      .slide-img-big-h img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 100%;
+        height: 100%;
+      }
+
+      .large {
+        font-size: xx-large;
+      }
+      .small {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+
+# INDEX SCHOOL
+# HARDCORE ver.
+
+---
+
+# План
+## День 1
+
+- Разработчики и всё, что с ними связано
+
+## День 2
+
+- Разработчики и все, все, все
+
+---
+
+# Разработка ПО
+
+.center.slide-img[![Logo](img/index_logo.png)]
+
+---
+
+# Зачем?
+
+---
+
+# Зачем?
+
+.center.slide-img[![Image](img/w001.jpg)]
+
+---
+
+# Зачем?
+
+.center.slide-img[![Image](img/w002.jpg)]
+
+---
+
+# Зачем?
+
+.center.slide-img[![Image](img/w004.jpg)]
+
+---
+
+# Зачем?
+
+.center.slide-img[![Image](img/w005.jpg)]
+
+---
+
+# Зачем?
+
+.center.slide-img[![Image](img/w006.jpg)]
+
+---
+
+# Среда
+
+---
+
+# Среда
+
+.center.slide-img[![01_scheme_rus.png](img/env.png)]
+
+---
+
+# История
+
+---
+
+# IX в
+
+.center.slide-img[![img](img/mash_bebbidg.jpg)]
+
+---
+
+# 1950-е
+
+.center.slide-img[![img](img/1503596729139535137.jpg)]
+
+---
+
+# Дальше - больше!
+
+.center.slide-img[![img](img/siliconengine-welcome-main.jpg)]
+
+---
+
+# Дальше - больше!
+
+.center.slide-img[![img](img/3db530df3fb1c9d557832cce569ae0b6.jpg)]
+
+---
+
+# Дальше - больше!
+
+.center.slide-img[![img](img/1960s.png)]
+
+---
+
+# Языки
+
+.center.slide-img[![silicon valley](img/ada.jpg)]
+
+---
+
+# Языки
+
+  * .large[Машинные] .small[`-` исполняются непосредственно "железом"]
+  * .large[Ассемблер] .small[`-` понятное представление машинного языка]
+  * .large[Высокого уровня] .small[`-` независимый от машины]
+  * .large[Системные] .small[`-` для низкоуровневых задач: управление памятью, процессами и т.п.]
+  * .large[Скриптовые] .small[`-` высокоуровневые, для быстрого написания кода]
+  * .large[Предметно-ориентированные] .small[`-` для описания чего-либо]
+  * .large[Визуальные] .small[`-` нетекстовые языки]
+  * .large[Эзотерические] .small[`-` просто для развлечения]
+
+
+---
+
+# Языки
+
+.center.slide-img[![img](img/compiled.png)]
+
+---
+
+# Типизация
+
+.center.slide-img[![img](img/Static-Typing-vs-Dynamic-Typing.jpg)]
+
+---
+
+# Парадигмы
+
+.center.slide-img[![Languages](img/langs.gif)]
+
+---
+
+# Процедурное программирование
+
+.center.slide-img[![Languages](img/block.png)]
+
+---
+
+# Объектно-ориентированное программирование
+
+.center.slide-img[![Object oriented](img/obj1.png)]
+
+---
+
+# ООП
+
+.center.slide-img[![Object oriented](img/eip.png)]
+
+---
+
+# Функциональное программирование
+
+.center.slide-img[![Haskell](img/adsfasdfdd.jpg)]
+
+---
+
+# Функциональное программирование
+
+.center.slide-img[![Haskell](img/PlivH5b.jpg)]
+
+---
+
+# Рекурсия
+
+.center.slide-img[![Haskell](img/1312896728_19.jpg)]
+
+---
+
+# Логическое программирование
+
+```(prolog)
+% что любит Мери 
+likes(mary, pears).
+likes(mary, popcorn).
+likes(mary, apples).
+
+% что любит Бет 
+% Бет любит то, что любит Мери, если это фрукт и если он красный 
+likes(beth, X):-likes(mary, X), fruit(X), color(X, red). 
+% Бет любит то, что любит Мери, если это кукурузные зерна 
+likes(beth, X):-likes(mary, X), X=popcorn. 
+
+% справочная информация 
+fruit(pears).  
+fruit(apples). 
+
+color(pears, yellow). 
+color(oranges, orange). 
+color(apples, red). 
+color(apples, yellow).
+```
+
+```(prolog)
+likes(beth, X).
+```
+
+```()
+X = apples
+X = popcorn
+```
+
+---
+
+# Языки
+
+.center.slide-img-wide[![img](img/github_langs.png)]
+<a href="https://madnight.github.io/githut/#/pushes/2018/1" target="_blank">Подробнее...</a>
+
+---
+
+# Структуры данных
+
+---
+
+# Массив
+
+.center.slide-img[![array](img/array.jpg)]
+
+---
+
+# Стек / Очередь
+
+.center.slide-img[![stack queue](img/stack_queue.png)]
+
+---
+
+# Дерево
+
+.center.slide-img[![tree](img/tree.png)]
+
+---
+
+# Граф
+
+.center.slide-img[![graph](img/graph.jpg)]
+
+---
+
+# Хэш-таблица
+
+.center.slide-img[![Hash](img/hash.png)]
+
+---
+
+# Алгоритмы
+
+---
+
+# Поиск
+
+.center.slide-img[![array](img/search.gif)]
+
+---
+
+# Сортировка
+
+.center.slide-img[![array](img/quicksort.gif)]
+
+---
+
+# Библиотеки и фреймворки
+
+.center.slide-img[![array](img/framework-1.png)]
+
+---
+
+# Библиотеки и фреймворки
+
+.center.slide-img[![array](img/lib_vs_framework.png)]
+
+---
+
+# Библиотеки и фреймворки
+
+.center.slide-img[![array](img/Server-Side-Frameworks-2.png)]
+
+---
+
+# Сеть
+
+.center.slide-img[![img](img/tcp_ip.jpg)]
+
+---
+
+# Сеть
+
+.center.slide-img[![img](img/dns.png)]
+
+---
+
+# Клиент / Сервер
+
+.center.slide-img[![CS](img/client-server.gif)]
+
+---
+
+# Сеть
+
+.center.slide-img[![img](img/http.gif)]
+
+---
+
+# API
+
+.center.slide-img[![img](img/apis.png)]
+
+---
+
+# Микросервисы
+
+.center.slide-img[![OSI](img/micro.png)]
+
+---
+
+# Бонус
+
+---
+
+# Machine Learning
+
+.center.slide-img[![ML](img/1520579396336.svg)]
+
+---
+
+# Нейронные сети
+
+.center.slide-img[![ML](img/nn01.gif)]
+
+---
+
+# Нейронные сети
+
+.center.slide-img[![ML](img/nn02.gif)]
+
+---
+
+# Нейронные сети
+
+.center.slide-img[![ML](img/nn03.gif)]
+
+---
+
+# Деревья решений
+
+.center.slide-img[![ML](img/decision-tree-tutorial-animated3.gif)]
+
+---
+
+# Деревья решений
+
+.center.slide-img[![ML](img/vrf_teaser.png)]
+
+---
+
+# Криптография
+
+.center.slide-img[![Crypto](img/crypto01.jpg)]
+
+---
+
+# Криптография
+
+.center.slide-img[![Crypto](img/crypto02.png)]
+
+---
+
+# Криптография
+
+.center.slide-img[![Crypto](img/crypto03.png)]
+
+---
+
+# Blockchain
+
+.center.slide-img[![Blockchain](img/block_01.jpg)]
+
+---
+
+.center.slide-img-big-h[![Blockchain](img/blockchain.jpg)]
+
+---
+
+# Спасибо за внимание!
+
+
+    </textarea>
+    <script src="js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
