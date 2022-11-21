@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LiveLib Game</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  body {
+    margin: 10px;
+  }
+  #plusButton {
+    position: absolute;
+    top: 10px;
+    left: 781px;
+    width: 40px;
+    height: 40px;
+  }
+  #itemList {
+    position: absolute;
+    top: 60px;
+    left: 781px;
+  }
+  .background {
+    width: 761px; height: 1080px; background-image: url(https://u.livelib.ru/reader/ya_nastya/o/6i24alpk/o-o.jpeg);
+  }
+  .container {
+    width: 720px; height: 960px;
+    padding-left: 20px;
+    padding-top: 120px;
+  }
+  .draggable {
+    width: 120px; height: 120px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    const leftOffset = 20 + 10;
+    const topOffset = 120 + 10;
+
+    const positions = JSON.parse(localStorage.getItem('positions') || '{}');
+    let parts = Object.keys(positions);
+
+    console.log(positions);
+
+    const savePositions = () => {
+      localStorage.setItem('positions', JSON.stringify(positions));
+    };
+
+    const removeElem = (url) => {
+      if (confirm(`Remove ${url}?`)) {
+        delete positions[url];
+
+        savePositions();
+        location.reload()
+      }
+    }
+
+    const updateList = () => {
+      const $list = $('#itemList');
+      $list.empty();
+
+      parts.forEach((url) => {
+        $list.append(`<li>${url} <button onClick='removeElem("${url}")'>-</button></li>`);
+      });
+    };
+
+    const drag = (event, ui) => {
+        const position = {
+            left: (ui.offset.left - leftOffset) / 120,
+            top: (ui.offset.top - topOffset) / 120,
+        }
+
+        positions[ui.helper.attr('src')] = position;
+
+        savePositions();
+    };
+
+    const addElem = (url, i) => {
+      const position = positions[url] || {left: 7, top: i};
+      const left = 120 * position.left - i * 120;
+      const top = 120 * position.top;
+      const style = `position: relative; left: ${left}px; top: ${top}px;`
+
+      const $elem = $(`<img class="draggable ui-widget-content" src="${url}" style="${style}" />`);
+      
+      $elem.draggable({drag: drag, grid: [ 120, 120 ]});
+
+      $('#container').append($elem);
+
+      return position;
+    };
+
+    $( function() {
+        // position: relative; left: -12px; top: 341px;
+        parts.forEach(addElem);
+
+        updateList();
+
+        $('#plusButton').on('click', () => {
+          const url = prompt("URL", "");
+          if (url) {        
+            const position = addElem(url, parts.length);
+            parts.push(url);
+            positions[url] = position;
+
+            savePositions();
+            updateList();
+          }
+        });
+    } );
+  </script>
+</head>
+<body>
+
+<div class="background">
+    <div id="container" class="container">
+</div>
+
+</div>
+
+<button type="button" id="plusButton">+</button>
+
+<ul id="itemList"></ul>
+ 
+</body>
+</html>
