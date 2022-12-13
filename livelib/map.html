@@ -43,7 +43,7 @@
     const leftOffset = 20 + 10;
     const topOffset = 120 + 10;
 
-    const positions = JSON.parse(localStorage.getItem('positions') || '{}');
+    let positions = JSON.parse(localStorage.getItem('positions') || '{}');
     let parts = Object.keys(positions);
 
     console.log(positions);
@@ -57,7 +57,7 @@
         delete positions[url];
 
         savePositions();
-        location.reload()
+        location.reload();
       }
     }
 
@@ -96,6 +96,21 @@
       return position;
     };
 
+    function download(content, fileName, contentType) {
+      var a = document.createElement("a");
+      var file = new Blob([content], {type: contentType});
+      a.href = URL.createObjectURL(file);
+      a.download = fileName;
+      a.click();
+    }
+
+    function onReaderLoad(event){
+      positions = JSON.parse(event.target.result);
+
+      savePositions();
+      location.reload();
+    }
+
     $( function() {
         // position: relative; left: -12px; top: 341px;
         parts.forEach(addElem);
@@ -113,6 +128,17 @@
             updateList();
           }
         });
+
+        $('#downloadButton').on('click', () => {
+          const data = JSON.stringify(positions);
+          download(data, 'map.json', 'application/json')
+        });
+
+        $('#selectFiles').on('change', (e) => {
+          var reader = new FileReader();
+          reader.onload = onReaderLoad;
+          reader.readAsText(event.target.files[0]);
+        });
     } );
   </script>
 </head>
@@ -125,6 +151,8 @@
 </div>
 
 <button type="button" id="plusButton">+</button>
+<button type="button" id="downloadButton">Download</button>
+<input type="file" id="selectFiles" value="Import" />
 
 <ul id="itemList"></ul>
  
